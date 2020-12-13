@@ -122,7 +122,9 @@ describe("highlighter", () => {
                 if (!lang || lang === "null") {
                   lang = "typescript"
                 }
-                return highlighter.codeToHtml(rawCode, lang).replace(/<a[^>]*>([^<]+)<\/a>/g, "")
+                return highlighter
+                  .codeToHtml(rawCode, lang)
+                  .replace(/<a[^>]*>([^<]+)<\/a>/g, "")
               }
             }
           }
@@ -214,10 +216,10 @@ describe("highlighter", () => {
 
     test("renders correctly", () => {
       expect(nuxtContent).toMatchInlineSnapshot(`
-        "<div class=\\"nuxt-content-highlight\\"><pre class=\\"shiki twoslash lsp\\"><div class=\\"code-container\\"><code><span style=\\"color:#8FBCBB;\\"><span data-lsp=\\"var console: Console\\" class=\\"data-lsp\\">console</span></span><span style=\\"color:#ECEFF4;\\">.</span><span style=\\"color:#88C0D0;\\"><span data-lsp=\\"(method) Console.log(...data: any[]): void\\" class=\\"data-lsp\\">log</span></span><span style=\\"color:#D8DEE9FF;\\">(</span><span style=\\"color:#ECEFF4;\\">'</span><span style=\\"color:#A3BE8C;\\">Highlighter</span><span style=\\"color:#ECEFF4;\\">'</span><span style=\\"color:#D8DEE9FF;\\">)</span></code><a href=\\"https://www.typescriptlang.org/play/#code/MYewdgziA2CmB00QHMAUByAEgS2QC2lzwBdYAndASgCgg\\">Try</a></div></pre></div>
+        "<div class=\\"nuxt-content-highlight\\"><pre class=\\"shiki twoslash lsp\\"><div class=\\"code-container\\"><code><span style=\\"color:#8FBCBB;\\"><span data-lsp=\\"var console: Console\\" class=\\"data-lsp\\">console</span></span><span style=\\"color:#ECEFF4;\\">.</span><span style=\\"color:#88C0D0;\\"><span data-lsp=\\"(method) Console.log(...data: any[]): void\\" class=\\"data-lsp\\">log</span></span><span style=\\"color:#D8DEE9FF;\\">(</span><span style=\\"color:#ECEFF4;\\">'</span><span style=\\"color:#A3BE8C;\\">Highlighter</span><span style=\\"color:#ECEFF4;\\">'</span><span style=\\"color:#D8DEE9FF;\\">)</span></code></div></pre></div>
         <div class=\\"nuxt-content-highlight\\"><pre class=\\"shiki twoslash lsp\\"><div class=\\"code-container\\"><code><span style=\\"color:#81A1C1;\\">function</span><span style=\\"color:#D8DEE9FF;\\"> </span><span style=\\"color:#88C0D0;\\"><span data-lsp=\\"function sum(a: number, b: number): string\\" class=\\"data-lsp\\">sum</span></span><span style=\\"color:#ECEFF4;\\">(</span><span style=\\"color:#D8DEE9;\\"><span data-lsp=\\"(parameter) a: number\\" class=\\"data-lsp\\">a</span></span><span style=\\"color:#81A1C1;\\">:</span><span style=\\"color:#D8DEE9FF;\\"> </span><span style=\\"color:#8FBCBB;\\">number</span><span style=\\"color:#ECEFF4;\\">,</span><span style=\\"color:#D8DEE9FF;\\"> </span><span style=\\"color:#D8DEE9;\\"><span data-lsp=\\"(parameter) b: number\\" class=\\"data-lsp\\">b</span></span><span style=\\"color:#81A1C1;\\">:</span><span style=\\"color:#D8DEE9FF;\\"> </span><span style=\\"color:#8FBCBB;\\">number</span><span style=\\"color:#ECEFF4;\\">)</span><span style=\\"color:#81A1C1;\\">:</span><span style=\\"color:#D8DEE9FF;\\"> </span><span style=\\"color:#8FBCBB;\\">string</span><span style=\\"color:#D8DEE9FF;\\"> </span><span style=\\"color:#ECEFF4;\\">{</span>
         <span style=\\"color:#D8DEE9FF;\\">  </span><span style=\\"color:#81A1C1;\\">return</span><span style=\\"color:#D8DEE9FF;\\"> </span><span style=\\"color:#81A1C1;\\">true</span>
-        <span class=\\"error\\"><span>Type 'boolean' is not assignable to type 'string'.</span><span class=\\"code\\">2322</span></span><span class=\\"error-behind\\">Type 'boolean' is not assignable to type 'string'.</span><span style=\\"color:#ECEFF4;\\">}</span></code><a href=\\"https://www.typescriptlang.org/play/#code/PTAEAEFMCdoe2gZwFygEwGY1oFADMBXAOwGMAXASziNEQIFsAKAQ1SIYCMYAaUDtzjACUqRGWgUiAc1ABvHKFDRIZAtBriCkHAF8cQA\\">Try</a></div></pre></div>"
+        <span class=\\"error\\"><span>Type 'boolean' is not assignable to type 'string'.</span><span class=\\"code\\">2322</span></span><span class=\\"error-behind\\">Type 'boolean' is not assignable to type 'string'.</span><span style=\\"color:#ECEFF4;\\">}</span></code></div></pre></div>"
       `)
     })
   })
