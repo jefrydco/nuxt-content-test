@@ -122,7 +122,7 @@ describe("highlighter", () => {
                 if (!lang || lang === "null") {
                   lang = "typescript"
                 }
-                return highlighter.codeToHtml(rawCode, lang)
+                return highlighter.codeToHtml(rawCode, lang).replace(/<a[^>]*>([^<]+)<\/a>/g, "")
               }
             }
           }
@@ -187,7 +187,7 @@ describe("highlighter", () => {
                   {},
                   highlighter,
                   twoslashResults
-                )
+                ).replace(/<a[^>]*>([^<]+)<\/a>/g, "")
               }
             }
           }
